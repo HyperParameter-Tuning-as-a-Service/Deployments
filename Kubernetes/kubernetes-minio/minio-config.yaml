@@ -30,5 +30,5 @@ resources:
 
 ##
 buckets:
-  - name: hyptaas-bucket
+  - name: demucs-bucket
     policy: public
