@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-service
+  name: trainer-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend-service
+      app: trainer-service
   template:
     metadata:
       labels:
-        app: backend-service
+        app: trainer-service
     spec:
       containers:
-        - name: backend-service
-          image: anushkumarv/hyptaas-backend-service:latest
+        - name: trainer-service
+          image: anushkumarv/hyptaas-trainer-service:latest
           ports:
             - containerPort: 5002
               protocol: TCP
@@ -24,7 +24,7 @@ spec:
               cpu: "1000m"
           envFrom:
             - configMapRef:
-                name: backend-service-configmap 
+                name: trainer-service-configmap 
             - secretRef:
                 name: minio-secret
             - secretRef:
