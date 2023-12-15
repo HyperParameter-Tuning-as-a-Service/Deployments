@@ -7,8 +7,12 @@ spec:
   ports:
     - name: minio-app-port
       protocol: TCP
-      port: 5002
-      targetPort: 5002
+      port: 9000
+      targetPort: 9000
+    - name: minio-admin-port
+      protocol: TCP
+      port: 9001
+      targetPort: 9001
   selector:
-    name: minio
-    instance: minio-prj
+    app.kubernetes.io/instance: minio-proj
+    app.kubernetes.io/name: minio
