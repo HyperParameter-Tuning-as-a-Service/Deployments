@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend-service
-          image: anushkumarv/hyptaas-backend-service:latest
+          image: anushkumarv/hyptaas-backend-service:gke
           ports:
             - containerPort: 5002
               protocol: TCP
